@@ -1,0 +1,11 @@
+{% include "components/head.html" %}
+<body>
+<img src="/static/images/logo.svg" alt="Логотип сайта">
+<h1>Список пицц</h1>
+<ul>
+  {% for pizza in pizzas %}
+    <li>{{ pizza.name }} - {{ pizza.price }} рублей</li>
+  {% endfor %}
+</ul>
+</body>
+</html>
