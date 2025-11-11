@@ -2,16 +2,31 @@
     {
         "id": 1,
         "name": "Маргарита",
-        "price": 2300.0
+        "price": 2300.0,
+        "category_id": 1
     },
     {
         "id": 3,
         "name": "Маргарита тест",
-        "price": 2300.0
+        "price": 2300.0,
+        "category_id": null
     },
     {
         "id": 4,
         "name": "Маргарита",
-        "price": 2300.0
+        "price": 2300.0,
+        "category_id": null
+    },
+    {
+        "id": 5,
+        "name": "Пицца маргаритка с ананасами",
+        "price": 745.0,
+        "category_id": 0
+    },
+    {
+        "id": 6,
+        "name": "Пепперони фреш",
+        "price": 650.3,
+        "category_id": 3
     }
 ]

@@ -6,4 +6,5 @@ class Pizza(BaseModel):
     # поле идентификатора будет необязательным в теле запроса (например при добавлении)
     name: str
     price: float
+    category_id: Optional[int] = None
 

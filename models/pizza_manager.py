@@ -29,7 +29,12 @@ class PizzaManager:
     def get_all(self):
         return self.pizzas
 
-    def add_pizza(self, pizza: Pizza) -> dict:
+    def add_pizza(self, pizza: Pizza, categories) -> dict:
+        if pizza.category_id is not None:
+            category_exists = any(cat.id == pizza.category_id for cat in categories)
+            if not category_exists:
+                return {"message": "Категории с таким идентификатором не существует"}
+
         if self.pizzas:
             new_id = self.pizzas[-1].id + 1
         else:
@@ -42,13 +47,19 @@ class PizzaManager:
             "pizza": pizza
         }
 
-    def edit_pizza(self, pizza_id: int, new_name: str, new_price: float) -> dict:
+    def edit_pizza(self, pizza_id: int, new_name: str, new_price: float, category_id: int, categories) -> dict:
         pizza_to_edit = next((pizza for pizza in self.pizzas if pizza.id == pizza_id), None)
         if not pizza_to_edit:
             return {"message": "Пицца с таким ID не найдена"}
 
+        if category_id is not None:
+            category_exists = any(cat.id == category_id for cat in categories)
+            if not category_exists:
+                return {"message": "Категории с таким идентификатором не существует"}
+
         pizza_to_edit.name = new_name
         pizza_to_edit.price = new_price
+        pizza_to_edit.category_id = category_id
         self._save()
         return {
             "message": f"Пицца с идентификатором {pizza_to_edit.id} успешно обновлена",
