@@ -40,3 +40,26 @@ class CategoryManager:
             "message": "Категория успешно добавлена",
             "category": category
         }
+
+    def edit_category(self, category_id: int, new_name: str) -> dict:
+        category_to_edit = next((category for category in self.categories if category.id == category_id), None)
+        if not category_to_edit:
+            return {"message": "Категория с таким ID не найдена"}
+
+        category_to_edit.id = category_id
+        category_to_edit.name = new_name
+        self._save()
+        return {
+            "message": f"Категория с идентификатором {category_to_edit.id} успешно обновлена",
+            "category": category_to_edit
+        }
+
+    def delete_category(self, category_id: int) -> dict:
+        category_to_delete = next((category for category in self.categories if category.id == category_id), None)
+        if not category_to_delete:
+            return {"message": "Категория с таким ID не найдена"}
+
+        self.categories.remove(category_to_delete)
+        self._save()
+        # удаление делаем более мягким, не удаляя вслед за собой пиццы, которые привязаны к удалённой категории
+        return {"message": "Категория успешно удалена"}

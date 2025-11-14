@@ -1,10 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
 {% include "components/head.html" %}
 <body>
 <h1>Список пицц</h1>
+
 <ul>
-  {% for pizza in pizzas %}
-    <li>{{ pizza.name }} - {{ pizza.price }} рублей</li>
-  {% endfor %}
+    {% for pizza in pizzas %}
+        <li>
+            {{ pizza.name }} - {{ pizza.price }} рублей <br>
+            {% if pizza.category_name %}
+                {{ pizza.category_name }}
+            {% endif %}
+        </li>
+    {% endfor %}
 </ul>
 </body>
 </html>

@@ -1,6 +1,8 @@
 import json
 import os.path
 
+from unicodedata import category
+
 from models.pizza import Pizza
 
 
@@ -28,6 +30,19 @@ class PizzaManager:
 
     def get_all(self):
         return self.pizzas
+
+    def get_all_with_category(self, categories):
+        result = []
+        for pizza in self.pizzas:
+            category_name = next((cat.name for cat in categories if cat.id == pizza.category_id), None)
+            result.append({
+                "id": pizza.id,
+                "name": pizza.name,
+                "price": pizza.price,
+                "category_id": pizza.category_id,
+                "category_name": category_name
+            })
+        return result
 
     def add_pizza(self, pizza: Pizza, categories) -> dict:
         if pizza.category_id is not None:
