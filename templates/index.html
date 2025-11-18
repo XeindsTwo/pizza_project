@@ -2,17 +2,21 @@
 <html lang="en">
 {% include "components/head.html" %}
 <body>
-<h1>Список пицц</h1>
 
-<ul>
+<h1>Список пицц</h1>
+<a class="btn bottom" href="/pizzas/add">Добавить пиццу</a>
+<div class="grid">
     {% for pizza in pizzas %}
-        <li>
-            {{ pizza.name }} - {{ pizza.price }} рублей <br>
+        <div class="pizza-card">
+            <div class="pizza-name">{{ pizza.name }}</div>
+            <div class="pizza-price">{{ pizza.price }} ₽</div>
+
             {% if pizza.category_name %}
-                {{ pizza.category_name }}
+                <span class="category-badge">{{ pizza.category_name }}</span>
             {% endif %}
-        </li>
+        </div>
     {% endfor %}
-</ul>
+</div>
+
 </body>
 </html>

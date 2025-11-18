@@ -15,13 +15,7 @@ pizza_manager = PizzaManager()
 category_manager = CategoryManager()
 templates = Jinja2Templates(directory="templates")
 
-
-@app.get('/')
-def root():
-    return {"message": "Добро пожаловать в мир пицц"}
-
-
-@app.get("/pizzas")
+@app.get("/")
 def get_pizzas(request: Request):
     categories = category_manager.get_all()
     pizzas = pizza_manager.get_all_with_category(categories)
@@ -44,7 +38,7 @@ def add_pizza(
     categories = category_manager.get_all()
     pizza = Pizza(name=name, price=price, category_id=category_id)
     pizza_manager.add_pizza(pizza, categories)
-    return RedirectResponse(url="/pizzas", status_code=303)
+    return RedirectResponse(url="/", status_code=303)
 
 
 @app.put("/pizzas/edit")

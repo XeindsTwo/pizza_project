@@ -30,48 +30,6 @@
         "category_id": 3
     },
     {
-        "id": 7,
-        "name": "string",
-        "price": 0.0,
-        "category_id": 2
-    },
-    {
-        "id": 8,
-        "name": "string",
-        "price": 0.0,
-        "category_id": null
-    },
-    {
-        "id": 9,
-        "name": "string",
-        "price": 0.0,
-        "category_id": null
-    },
-    {
-        "id": 10,
-        "name": "string",
-        "price": 0.0,
-        "category_id": null
-    },
-    {
-        "id": 11,
-        "name": "string",
-        "price": 0.0,
-        "category_id": null
-    },
-    {
-        "id": 12,
-        "name": "string",
-        "price": 0.0,
-        "category_id": null
-    },
-    {
-        "id": 13,
-        "name": "сука",
-        "price": 0.0,
-        "category_id": 2
-    },
-    {
         "id": 14,
         "name": "Papparoni",
         "price": 340.34,
@@ -82,5 +40,11 @@
         "name": "Д-2",
         "price": 3400.0,
         "category_id": 1
+    },
+    {
+        "id": 16,
+        "name": "Бари",
+        "price": 3700.0,
+        "category_id": 3
     }
 ]

@@ -1,0 +1,102 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f7;
+    margin: 0;
+    padding: 30px;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.btn {
+    background-color: #44A3DD;
+    border-radius: 20px;
+    padding: 13px 30px;
+    border: none;
+    text-decoration: none;
+    color: white;
+    display: block;
+    max-width: max-content;
+    margin: 0 auto;
+}
+
+.btn.bottom {
+    margin: 0 auto 30px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.pizza-card {
+    background: white;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    transition: 0.18s ease;
+}
+
+.pizza-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.pizza-name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.pizza-price {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.category-badge {
+    display: inline-block;
+    background: #44A3DD;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+form {
+    max-width: 460px;
+    margin: 0 auto;
+    background: white;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+input, select {
+    max-width: 100%;
+    width: 100%;
+    padding: 11px 10px;
+    margin-bottom: 30px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+}
